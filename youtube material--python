@@ -1,0 +1,45 @@
+#集合的运算
+s1 = {3,4,5}
+s2={4,5,6}
+s4= s1&s2#取交集
+s3= s1|s2#取并集但不重复取
+s5 = s1-s2#差集，从s1中删去s1与s2的交集，只剩s1自己独有的，
+# 反过来s2-s1即剩下s2独有的
+s6 = s1^s2#反交集，取s1与s2并集减去交集的部分，即不重叠部分
+#print(s6)
+#字符串
+s = set('1233')#只有string可以被拆并去重，int不可以
+#print(s)
+#字典的运算      列表是有序排列，字典是无序的
+dict={'d':1,'e':2}
+del dict['d']#字典的删除
+#print(dict)
+list=[3,4,5]
+dic = {x:x*2 for x in list}
+#print(dic)#以列表的内容产生键值对 {3: 6, 4: 8, 5: 10}
+a_list =[1,2,3,4,5,6]
+a_dict={'a':[2,1,4],'b':{1:2,3:4},(2,3):(4,5)}
+#print(a_dict['a'][2])#可以先按key找value，再用索引找对应值
+#print(a_dict['b'][1])#可以嵌套字典
+#print(a_dict[(2,3)][1])#可以把元组当做key和value
+#字典不能用列表当键值
+a_dict['tom',]= 21#另一种形式的把tuple 当key值
+#print(a_dict)
+
+d1 = {1:2,2:3,'a':8}
+d2= {3:4}
+d2.update(d1)
+print(d2)
+info = {'a':1,'b':2,'c':3}
+info.setdefault('d','alex')#setdefault作用是，先去字典中查找对应的key值，发现已存在，则返回先存值，
+# 若查找的这个key不存在，则赋予字典一个key—value对
+print(info)
+info.update(d1)#在合并的时候，有新的值则创建新的，
+# 如果key值已存在，则用新的value覆盖
+print(info)
+
+#字典循环
+for i in info :
+    print(i,info[i])#这种循环是直接把字典的key和value找到并输出
+for k , v in info.items():
+    print(k,v)#这种是先把字典转成列表，然后再把列表对应的值输出，所以不推荐大数据使用
