@@ -1,0 +1,29 @@
+class  Stack:
+    def __init__(self):
+        self.items =[]
+    def isEmpty(self):
+        return len(self.items)==0
+    def push(self,item):
+        self.items.append(item)
+    def pop(self):
+        return self.items.pop()
+    def peek(self):
+        if not self.isEmpty():
+            return self.items[len(self.items)-2]#输出当前位置减一的位置 比如有4，dog,cay三个，则3-1 即【2】相当于第三个
+    def size(self):
+        return  len(self.items)
+
+s = Stack()
+print(s.isEmpty())
+s.push(4)
+s.push('dog')
+s.push('cay')
+print(s.peek())#peek相当于把栈顶的元素输出
+#print(len(self.items))
+s.push(True)
+print(s.size())
+print(s.isEmpty())
+s.push(8.4)
+print(s.pop())
+print(s.pop())
+print(s.size())
